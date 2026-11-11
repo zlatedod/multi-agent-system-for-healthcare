@@ -1,0 +1,81 @@
+[
+  {
+    "name": "Claude ",
+    "type": "@n8n/n8n-nodes-langchain.anthropic",
+    "parameters": {
+      "modelId": {
+        "__rl": true,
+        "value": "claude-opus-4-5-20251101",
+        "mode": "list",
+        "cachedResultName": "claude-opus-4-5-20251101"
+      },
+      "messages": {
+        "values": [
+          {
+            "content": "={{ $json.prompt.user }}"
+          }
+        ]
+      },
+      "simplify": false,
+      "options": {
+        "system": "={{$json.prompt.system}}",
+        "maxTokens": 8192
+      }
+    }
+  },
+  {
+    "name": "ChatGPT",
+    "type": "@n8n/n8n-nodes-langchain.openAi",
+    "parameters": {
+      "modelId": {
+        "__rl": true,
+        "value": "gpt-5",
+        "mode": "list",
+        "cachedResultName": "GPT-5"
+      },
+      "messages": {
+        "values": [
+          {
+            "content": "={{ $json.prompt.system }}",
+            "role": "system"
+          },
+          {
+            "content": "={{ $json.prompt.user }}"
+          }
+        ]
+      },
+      "simplify": false,
+      "jsonOutput": true,
+      "options": {}
+    }
+  },
+  {
+    "name": "Meditron",
+    "type": "n8n-nodes-base.httpRequest",
+    "parameters": {
+      "method": "POST",
+      "url": "https://api-inference.huggingface.co/models/epfl-llm/meditron-7b",
+      "authentication": "predefinedCredentialType",
+      "nodeCredentialType": "huggingFaceApi",
+      "sendHeaders": true,
+      "headerParameters": {
+        "parameters": [
+          {
+            "name": "Authorization",
+            "value": "Bearer CONFIGURE_TOKEN_SECURELY_IN_N8N"
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ]
+      },
+      "sendBody": true,
+      "contentType": "raw",
+      "body": "=={{ JSON.stringify({\n  inputs: [\n    { role: 'system', content: $json.prompt.system },\n    { role: 'user',   content: $json.prompt.user }\n  ],\n  parameters: { temperature: 0.2, max_new_tokens: 2048, return_full_text: false },\n  options: { wait_for_model: true }\n}) }}",
+      "options": {
+        "timeout": 180000
+      }
+    }
+  }
+]
