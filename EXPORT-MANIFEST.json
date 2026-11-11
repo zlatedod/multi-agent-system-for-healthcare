@@ -1,0 +1,49 @@
+{
+  "source": "Current live MAS - mcp, identified by repository owner as the paper workflow; historical paper equivalence not independently verified",
+  "exported": "2026-11-11",
+  "source_node_count": 51,
+  "source_nodes_sha256": "b9d8ce06e22aa5fbeb9c637482b48a526c89fbe57a1ee8db5485b7f2fe24a2d5",
+  "source_connections_sha256": "574dc9b822b671350be89b9d993559769ca7d0d6e63b7df6f00f07a534aecc89",
+  "sanitization": [
+    "Get a file: private GitHub benchmark location replaced with blocked local-input placeholder.",
+    "Code in JavaScript2: hard-coded patient exclusion IDs replaced with explicit configuration error; original filter must be restored locally.",
+    "Meditron: inline Authorization header replaced with a credential placeholder.",
+    "Code in JavaScript4: removed a numeric case identifier from an illustrative comment; parsing logic unchanged."
+  ],
+  "removed_metadata": [
+    "Original workflow/node IDs",
+    "Credential mappings",
+    "Pinned/static execution data",
+    "Instance metadata and private source location"
+  ],
+  "unchanged": "Agent prompts, code other than the input/exclusion placeholders, model settings, SQL queries and graph connections",
+  "limitations": [
+    "Current live workflow includes prior repairs (mas_original_severity_v3); not certified as an unmodified historical submission",
+    "Real benchmark, exclusion IDs and ground truth are not distributed",
+    "No live execution or database modification performed",
+    "Database relation definitions are not bundled"
+  ],
+  "files": {
+    ".gitignore": "9df0aea3f8dccb01082a21772e21cbf3d05d99c4f34f073527d2adb414496df4",
+    "benchmark/format-example.json": "e6d41df6a75b66aeccb2f927dd990722da4d704f8f293558b975f2b33a8da96b",
+    "benchmark/README.md": "04b8c1aa7ecac4cc6be726a4f4cfb1c5a17b77c7f0a7ae9c406b58f6761fc860",
+    "docs/SETUP.md": "b1d8f3babe0f16b1699279453cdafe26afca91ccdf78454feea01b71ae8c3463",
+    "prompts/baseline-prompt-generator.cjs": "c815b92aedf0a6dd2cdcddb4199a51ca9568ee3188ab12c9515b1746779d85c1",
+    "prompts/baseline-provider-parameters.json": "f1b498993046af6a7ed5a7bb7db855730b86b784af1f0d61cf446c9bf39edbf8",
+    "prompts/demographic-agent.json": "8faff383c3537569dcbff717596a02057bb777a00fcb527ce9a8f7a0dff4e885",
+    "prompts/demographic-agent.md": "43d7e27714de48d5d0e2158418f4147f87f836d39fd16e845f3ac91615e6deb5",
+    "prompts/laboratory-agent.json": "64aedb548cc94b5d2e2e657a22eac4cb92719e85adee6852b0b165b6233c3c49",
+    "prompts/laboratory-agent.md": "be5b76c0a2932c999eadd9eb0f8fbe4fe1ecf092e851f4f78c70777b1cb9402e",
+    "prompts/orchestrator-agent.json": "3dbd29b8ccc0248763f77cb70b9a75b0e59a76c65295c0c3618012e37b5341cf",
+    "prompts/orchestrator-agent.md": "eeef40ea3753463d5bb0ee65bae9d58c145eb38aab8f66b2f84eb77a800668d6",
+    "prompts/pharmacy-agent.json": "7e68899921439e3d606691ca24b7c74b62ce1cfff216dd48ae040f44a6d87bcd",
+    "prompts/pharmacy-agent.md": "cff7ee74ae816d5a28ae5b1eab666bf3fb592d5b49461dafb8b2cf20617d7b49",
+    "README.md": "4c4b310b2d25faee668fb0b5b9ddb44af41d1ebae637e0670aa46f7f79da1ea7",
+    "sql/01-query.sql": "6f15164e176eed3c637f5519555884f5ea836fb76f6864151367f29d63969517",
+    "sql/02-query.sql": "e8bb6084c6e19100c7b9e70ba1c53beb55f3b7e30e369b5b9e190ab17b264836",
+    "sql/03-query.sql": "19f1b7dcdc512f63fd3e0db24786f56c1262ee660c5599b6cd5eced7c1f284db",
+    "sql/04-query.sql": "115ba563114c2e460e0c11c0392630b2e30531d711d6faf659c20581b10756d2",
+    "sql/05-query.sql": "2c8aa40b795d357b743e7cfde5cff2be96e8bac9e4e65bea39ae8a09f7d1209a",
+    "workflow/mas-mcp.json": "ac30217207528c18b0001ea3878b445a014e86c99240ad12461ff1b69dcff31e"
+  }
+}
