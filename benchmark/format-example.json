@@ -1,0 +1,11 @@
+[
+  {
+    "public_case": {
+      "scenario_id": "SYNTHETIC-FORMAT-ONLY",
+      "cohort_meta": {},
+      "narrative_sop": {"chief_complaint": "Synthetic placeholder: no patient information"},
+      "patient_context": {},
+      "role_views": {}
+    }
+  }
+]
